@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>مشاهدة مباريات - عرض مباشر</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>مشاهدة مباريات - Live Matches</h1>
+      <div class="top-row">
+        <div class="meta">موقع تجريبي لاستعراض طريقة عرض البثوص. عيّن روابط رسمية فقط.</div>
+        <div class="search"><input id="search" type="search" placeholder="ابحث عن فريق أو مباراة..." /></div>
+      </div>
+    </div>
+  </header>  <main class="container">
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <strong id="todayLabel">مباريات اليوم</strong>
+          <div class="meta">اضغط مشاهدة ليفتح المشغل</div>
+        </div>
+        <div>
+          <button id="refreshBtn" class="btn secondary">تحديث</button>
+        </div>
+      </div><div id="matches" class="matches" style="margin-top:12px"></div>
+</section>
+
+<section class="card">
+  <h3>معلومات ونصائح</h3>
+  <ul>
+    <li>استخدم روابط يوتيوب الرسمية أو تويتش الرسمية.</li>
+    <li>تقدر تضيف وصف، توقيت البث، وصورة لكل مباراة بوضع بيانات في المصفوفة داخل الكود.</li>
+    <li>لتشغيل الفيديو داخل الصفحة، إذا كان المصدر يسمح بالتضمين فسيعمل داخل iframe.</li>
+  </ul>
+</section>
+
+<footer>صنع بواسطة عبود — استخدم روابط رسمية فقط | لا تتحمل أي مسؤولية عن المحتوى الخارجي</footer>
+
+  </main>  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div id="modalTitle">مشاهدة</div>
+        <button id="closeModal" class="btn secondary">إغلاق</button>
+      </div>
+      <div class="modal-body"><iframe id="playerFrame" src="" allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe></div>
+    </div>
+  </div>  
+  <script src="script.js"></script>
+</body>
+</html>
