@@ -124,7 +124,7 @@ body {
 .channel-header:hover { background: #00BB2D; }
 
 .channel-header::after {
-  content: "â–¶";
+  content: "⏩";
   font-size: 0.9em;
   transition: transform 0.3s ease;
 }
