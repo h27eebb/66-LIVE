@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Bebas+Neue&display=swap');
+
+body {
+  font-family: "Cairo", sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ط´ط§ط´ط© ط§ظ„ط¨ط¯ط§ظٹط© */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: introPulse 2s infinite alternate;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5rem;
+  letter-spacing: 4px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeZoom 1.5s forwards;
+}
+
+.logo .red { color: #00BB2D; text-shadow: 0 0 20px #00BB2D; }
+.logo .white { color: #fff; text-shadow: 0 0 15px #fff; }
+
+@keyframes fadeZoom {
+  0% {opacity: 0; transform: scale(0.6);}
+  100% {opacity: 1; transform: scale(1);}
+}
+@keyframes introPulse {
+  0% {background: radial-gradient(circle at center, #0a0a0a, #000);}
+  100% {background: radial-gradient(circle at center, #111, #000);}
+}
+.fade-out { animation: fadeOut 0.8s forwards; }
+@keyframes fadeOut { to {opacity: 0; transform: scale(1.2);} }
+
+.hidden { display: none; }
+.fade-in { animation: fadeIn 1s ease forwards; }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ط§ظ„طµظپط­ط© */
+.container {
+  max-width: 850px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #141414;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #00BB2D;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#todayLabel { font-size: 1.3em; color: #00BB2D; }
+.meta { font-size: 0.9em; color: #aaa; }
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #00BB2D;
+  color: white;
+  transition: 0.2s;
+}
+.btn:hover { background: #008F22; }
+
+/* ط§ظ„ط£ظ‚ط³ط§ظ… */
+.section-title {
+  font-size: 1.2em;
+  color: #00BB2D;
+  margin: 25px 0 10px;
+  border-right: 4px solid #00BB2D;
+  padding-right: 10px;
+  text-shadow: 0 0 8px #00BB2D;
+}
+
+.channel-section { margin-bottom: 25px; }
+
+/* ط§ظ„ظ‚ظ†ظˆط§طھ */
+.channel {
+  background: #181818;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.channel-header {
+  padding: 12px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #181818 0%, #0a0a0a 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+.channel-header:hover { background: #00BB2D; }
+
+.channel-header::after {
+  content: "â–¶";
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+.channel.active .channel-header::after { transform: rotate(90deg); }
+
+.iframe-container {
+  display: none;
+  background: #000;
+  padding: 10px;
+  text-align: center;
+}
+.channel.active .iframe-container {
+  display: block;
+  animation: fadeIframe 0.4s ease;
+}
+@keyframes fadeIframe {
+  from {opacity: 0; transform: scale(0.97);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+iframe {
+  width: 100%;
+  height: 360px;
+  border: none;
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  iframe { height: 240px; }
+  .logo { font-size: 3.5rem; }
+}
